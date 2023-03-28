@@ -24,7 +24,7 @@ node('master') {
     stage('stage4: pre-restart check env and calculations'){
         // sh "scp -r ${WORKSPACE}/backend/* root@172.26.129.143:/opt/test-platform/test-platform/backend/"
         echo "stage 4: pre-restart check env"
-        sh "sum=0;for i in {1..100}; do echo sum=$((sum+i)); echo $sum ;done"
+        sh "echo 'The sum of numbers from 1 to 100 is \$(seq 1 100 | paste -sd+ | bc)'"
     }
     stage('stage5: pre-restart check md5sum'){
         // sh "scp -r ${WORKSPACE}/backend/* root@172.26.129.143:/opt/test-platform/test-platform/backend/"
